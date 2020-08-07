@@ -26,4 +26,16 @@
         android:id="@+id/navigation_beranda"
         android:name="com.example.nusaku.ui.beranda.BerandaFragment"
         android:label="@string/title_beranda" />
+    <fragment
+        android:id="@+id/navigation_cari"
+        android:name="com.example.nusaku.ui.cari.CariFragment"
+        android:label="@string/title_cari" />
+    <fragment
+        android:id="@+id/navigation_bookmark"
+        android:name="com.example.nusaku.ui.bookmark.BookmarkFragment"
+        android:label="@string/title_bookmark" />
+    <fragment
+        android:id="@+id/navigation_fragment"
+        android:name="com.example.nusaku.ui.profil.ProfilFragment"
+        android:label="@string/title_profil" />
 </navigation>
