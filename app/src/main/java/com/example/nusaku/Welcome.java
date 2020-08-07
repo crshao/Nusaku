@@ -1,24 +1,5 @@
 package com.example.nusaku;
 
-//import android.os.Bundle;
-//import android.support.wearable.activity.WearableActivity;
-//import android.widget.TextView;
-//
-//public class Welcome extends WearableActivity {
-//
-//    private TextView mTextView;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_welcome);
-//
-//        mTextView = (TextView) findViewById(R.id.text);
-//
-//        // Enables Always-on
-//        setAmbientEnabled();
-//    }
-//}
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -31,8 +12,10 @@ import butterknife.OnClick;
 
 
 public class Welcome extends AppCompatActivity {
-//    @BindView(R.id.now)
-//    Button b1;
+    @BindView(R.id.masuk)
+    Button b1;
+    @BindView(R.id.daftar)
+    Button b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +27,14 @@ public class Welcome extends AppCompatActivity {
 
         ButterKnife.bind(this);
     }
-//    @OnClick(R.id.now)
-//    void mlg(){
-//        startActivity(new Intent(this , Donate_K.class));
-//    }
+    @OnClick(R.id.masuk)
+    void masuk(){
+        startActivity(new Intent(this , Login.class));
+    }
+
+    @OnClick(R.id.daftar)
+    void daftar(){
+        startActivity(new Intent(this , Register.class));
+    }
 
 }
