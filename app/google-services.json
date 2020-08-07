@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "932080007780",
+    "firebase_url": "https://nusaku-b15c5.firebaseio.com",
+    "project_id": "nusaku-b15c5",
+    "storage_bucket": "nusaku-b15c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932080007780:android:397e84f18ffc9b86b4bd71",
+        "android_client_info": {
+          "package_name": "com.example.nusaku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932080007780-atj1kd3i6o4vnid9c7126lbf5kecnfk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nusaku",
+            "certificate_hash": "beed7a022a03c8b71fdc82b438815e547a81e79b"
+          }
+        },
+        {
+          "client_id": "932080007780-v6j8eqll6g0qm70kcudrik9hmqpsjvcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLmfG9eo7dnSL-AcHfdj-uVlNLOZNNP6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932080007780-v6j8eqll6g0qm70kcudrik9hmqpsjvcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
