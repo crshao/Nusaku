@@ -48,7 +48,7 @@
         android:layout_width="212px"
         android:layout_height="60px"
         android:layout_marginTop="1500px"
-        android:layout_marginLeft="165dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/masukButton"
         />
 
@@ -57,7 +57,7 @@
         android:layout_width="212px"
         android:layout_height="60px"
         android:layout_marginTop="1600px"
-        android:layout_marginLeft="165dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/daftarButton"
         />
 
