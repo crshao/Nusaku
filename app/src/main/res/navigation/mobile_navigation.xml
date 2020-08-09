@@ -35,7 +35,7 @@
         android:name="com.example.nusaku.ui.bookmark.BookmarkFragment"
         android:label="@string/title_bookmark" />
     <fragment
-        android:id="@+id/navigation_fragment"
+        android:id="@+id/navigation_profil"
         android:name="com.example.nusaku.ui.profil.ProfilFragment"
         android:label="@string/title_profil" />
 </navigation>
