@@ -33,21 +33,21 @@
         android:background="@drawable/welcome"
     >
 
-<!--    <androidx.viewpager.widget.ViewPager-->
-<!--        android:id="@+id/viewPager"-->
-<!--        android:layout_width="900px"-->
-<!--        android:layout_height="600px"-->
-<!--        android:layout_marginTop="250dp"-->
-<!--        android:layout_marginLeft="90px"-->
-<!--        android:layout_marginRight="90px"-->
-<!--        />-->
-    <com.chabbal.slidingdotsplash.SlidingSplashView
-        android:id="@+id/splash"
-            android:layout_width="900px"
-            android:layout_height="600px"
-            android:layout_marginTop="250dp"
-            android:layout_centerHorizontal="true"
-        app:imageResources="@array/img_id_arr"/>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="900px"
+        android:layout_height="600px"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="90px"
+        android:layout_marginRight="90px"
+        />
+<!--    <com.chabbal.slidingdotsplash.SlidingSplashView-->
+<!--        android:id="@+id/splash"-->
+<!--            android:layout_width="900px"-->
+<!--            android:layout_height="600px"-->
+<!--            android:layout_marginTop="250dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--        app:imageResources="@array/img_id_arr"/>-->
 
     <Button
         android:id="@+id/masuk"
@@ -55,8 +55,7 @@
         android:layout_height="60px"
         android:layout_marginTop="1500px"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/masukButton"
-        />
+        android:background="@drawable/masukbutton"/>
 
     <Button
         android:id="@+id/daftar"
@@ -64,9 +63,7 @@
         android:layout_height="60px"
         android:layout_marginTop="1600px"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/daftarButton"
-        />
-
+        android:background="@drawable/daftarbutton"/>
 
 </RelativeLayout>
 

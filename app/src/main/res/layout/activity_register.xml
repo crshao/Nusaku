@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/LoginRegister"
+    android:background="@drawable/loginregister"
     tools:context=".Register">
 
 <!--    <ImageView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/DaftarAkun"-->
+<!--        android:background="@drawable/daftarakun"-->
 <!--        android:layout_marginLeft="50dp"-->
 <!--        android:layout_marginTop="150dp"-->
 <!--        />-->
