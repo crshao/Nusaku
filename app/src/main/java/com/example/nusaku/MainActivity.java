@@ -3,10 +3,8 @@ package com.example.nusaku;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.nusaku.authentication.BaseActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;

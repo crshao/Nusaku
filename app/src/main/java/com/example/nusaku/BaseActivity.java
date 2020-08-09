@@ -1,4 +1,4 @@
-package com.example.nusaku.authentication;
+package com.example.nusaku;
 
 import android.content.Context;
 import android.view.View;
