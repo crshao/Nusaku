@@ -45,7 +45,8 @@
         android:fontFamily="sans-serif-black"
         android:hint="  Nama"
         android:padding="10dip"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:inputType="textPersonName"/>
 
     <EditText
         android:id="@+id/Email"
@@ -58,7 +59,8 @@
         android:fontFamily="sans-serif-black"
         android:hint="  Email"
         android:padding="10dip"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:id="@+id/Password"
@@ -84,7 +86,7 @@
         android:background="@drawable/rounded_edittext"
         android:fontFamily="sans-serif-black"
         android:hint="  Nomor Telepon"
-        android:inputType="number"
+        android:inputType="phone"
         android:padding="10dip"
         android:textSize="20sp" />
 
