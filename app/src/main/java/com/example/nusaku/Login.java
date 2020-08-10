@@ -141,6 +141,7 @@ public class Login extends BaseActivity implements View.OnClickListener {
                             Intent intent = new Intent(Login.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
+                            finish();
 //                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
