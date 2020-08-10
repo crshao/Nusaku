@@ -33,6 +33,29 @@
         android:background="@drawable/welcome"
     >
 
+    <TextView
+        android:id="@+id/jelajah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Jelajahi\nWarisan\nBudaya "
+        android:textColor="#F29F05"
+        android:textSize="22sp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="cari tempat yang kamu mau!\nmulai pantai, gunung, museum,\nsampai cagar budaya "
+        android:textColor="#FFF"
+        android:textSize="15sp"
+        android:layout_below="@id/jelajah"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        />
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="900px"
