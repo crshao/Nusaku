@@ -84,6 +84,21 @@
             android:textSize="20sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_layout"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </LinearLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/masuk"
         android:layout_width="333px"
@@ -94,5 +109,4 @@
         android:textColor="#707070"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="540dp"/>
-
 </RelativeLayout>

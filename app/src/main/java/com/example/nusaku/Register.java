@@ -10,7 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Register extends AppCompatActivity {
+public class Register extends BaseActivity {
     @BindView(R.id.daftar)
     Button b1;
     @BindView(R.id.back)

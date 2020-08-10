@@ -3,8 +3,11 @@ package com.example.nusaku;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -28,9 +31,10 @@ public class Login extends BaseActivity implements View.OnClickListener {
     private static final int RC_SIGN_IN = 9001;
     static final int GOOGLE_SIGN_IN = 123;
     private GoogleSignInClient mGoogleSignInClient;
+    String email, password;
 
     @BindView(R.id.back)
-    Button b2;
+    ImageButton b2;
 
     @BindView(R.id.email_layout)
     TextInputLayout txtEmail;
@@ -41,8 +45,8 @@ public class Login extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.masuk)
     MaterialButton btn_sign_in;
 
-//    @BindView(R.id.progress_bar)
-//    ProgressBar progressBar;
+    @BindView(R.id.progress_bar)
+    ProgressBar progressBar;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +60,7 @@ public class Login extends BaseActivity implements View.OnClickListener {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        setProgressBar(progressBar);
 //        updateUI(currentUser);
     }
 
@@ -93,6 +98,35 @@ public class Login extends BaseActivity implements View.OnClickListener {
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
 
+        if(email.isEmpty())
+        {
+            txtEmail.getEditText().setError("Email harus diisi!");
+            txtEmail.getEditText().requestFocus();
+            return ;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            txtEmail.setError("Mohon masukkan alamat email yang benar!");
+            txtEmail.getEditText().requestFocus();
+            return;
+        }
+
+        if(password.isEmpty())
+        {
+            txtPassword.getEditText().setError("Password harus diisi!");
+            txtPassword.getEditText().requestFocus();
+            return ;
+        }
+
+        if(password.length() < 6)
+        {
+            txtPassword.setError("Panjang minimal password adalah 6 karakter!");
+            txtPassword.getEditText().requestFocus();
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
         showProgressBar();
 
         // [START sign_in_with_email]
@@ -104,24 +138,23 @@ public class Login extends BaseActivity implements View.OnClickListener {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
 //                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Login.this, "Authentication failed.",
+                            Toast.makeText(Login.this, "User belum terdaftar!",
                                     Toast.LENGTH_SHORT).show();
+                            hideProgressBar();
+//                            Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 //                            updateUI(null);
 
 //                            // [START_EXCLUDE]
 //                            checkForMultiFactorFailure(task.getException());
 //                            // [END_EXCLUDE]
                         }
-
-                        // [START_EXCLUDE]
-                        if (!task.isSuccessful()) {
-//                            mBinding.status.setText(R.string.auth_failed);
-                        }
-                        hideProgressBar();
                         // [END_EXCLUDE]
                     }
                 });
@@ -130,7 +163,9 @@ public class Login extends BaseActivity implements View.OnClickListener {
 
     @OnClick(R.id.masuk)
     void masuk(){
-        startActivity(new Intent(this , MainActivity.class));
+        email = txtEmail.getEditText().getText().toString().trim();
+        password = txtPassword.getEditText().getText().toString().trim();
+        signIn(email, password);
     }
 
     @OnClick(R.id.back)
@@ -140,7 +175,6 @@ public class Login extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
     }
 }
 
