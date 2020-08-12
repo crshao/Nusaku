@@ -29,6 +29,7 @@ public class BerandaFragment extends Fragment {
                              Bundle savedInstanceState) {
         berandaViewModel = ViewModelProviders.of(this).get(BerandaViewModel.class);
         View root = inflater.inflate(R.layout.fragment_beranda, container, false);
+
         final TextView textView = root.findViewById(R.id.text_beranda);
 
         berandaViewModel.getText().observe(this, new Observer<String>() {
