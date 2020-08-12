@@ -25,7 +25,7 @@ public class CariFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_cari, container, false);
         final TextView textView = root.findViewById(R.id.text_cari);
 
-        cariViewModel.getText().observe(this, new Observer<String>() {
+        cariViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
