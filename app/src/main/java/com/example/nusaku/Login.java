@@ -115,7 +115,7 @@ public class Login extends BaseActivity implements View.OnClickListener {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Login.this, "User belum terdaftar!",
+                            Toast.makeText(Login.this, "User belum terdaftar/Password salah!",
                                     Toast.LENGTH_SHORT).show();
                             hideProgressBar();
 //                            Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();

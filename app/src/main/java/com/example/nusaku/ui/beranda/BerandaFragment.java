@@ -22,6 +22,9 @@ public class BerandaFragment extends Fragment {
 
     private BerandaViewModel berandaViewModel;
 
+    public BerandaFragment() {
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         berandaViewModel = ViewModelProviders.of(this).get(BerandaViewModel.class);
