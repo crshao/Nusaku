@@ -66,6 +66,7 @@ public class Register extends BaseActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
+    //if success, also sign-in the user
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
 
@@ -82,39 +83,7 @@ public class Register extends BaseActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
-                            Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil!", Toast.LENGTH_SHORT).show();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(Register.this, "Terjadi kesalahan pada server.",
-                                    Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
-                        }
-
-                        // [START_EXCLUDE]
-                        hideProgressBar();
-                        // [END_EXCLUDE]
-                    }
-                });
-        // [END create_user_with_email]
-    }
-
-    private void signIn(String email, String password) {
-        Log.d(TAG, "signIn:" + email);
-
-        if(!validate())
-            return;
-
-        showProgressBar();
-
-        // [START sign_in_with_email]
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
+                            //Set nama
                             FirebaseUser user = mAuth.getCurrentUser();
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setDisplayName(nama)
@@ -127,24 +96,25 @@ public class Register extends BaseActivity {
                                             Log.d(TAG, "User profile updated.");
                                         }
                                     });
-//                          updateUI(user);
+                            Toast.makeText(getApplicationContext(), "Pendaftaran Berhasil!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Register.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(Register.this, "User belum terdaftar/Password salah!",
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(Register.this, "Alamat email sudah terdaftar.",
                                     Toast.LENGTH_SHORT).show();
-                            hideProgressBar();
-//                            Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 //                            updateUI(null);
-
-//                            // [START_EXCLUDE]
-//                            checkForMultiFactorFailure(task.getException());
-//                            // [END_EXCLUDE]
                         }
+
+                        // [START_EXCLUDE]
+                        hideProgressBar();
                         // [END_EXCLUDE]
                     }
                 });
-        // [END sign_in_with_email]
+        // [END create_user_with_email]
     }
 
     private boolean validate()
@@ -159,6 +129,13 @@ public class Register extends BaseActivity {
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             txtEmail.setError("Mohon masukkan alamat email yang benar!");
             txtEmail.getEditText().requestFocus();
+            return false;
+        }
+
+        if(nama.isEmpty())
+        {
+            txtNama.getEditText().setError("Nama harus diisi!");
+            txtNama.getEditText().requestFocus();
             return false;
         }
 
@@ -187,12 +164,6 @@ public class Register extends BaseActivity {
         nomorhp = Objects.requireNonNull(txtNomor.getEditText()).getText().toString().trim();
 
         createAccount(email, password);
-        signIn(email, password);
-        //Login
-        Intent intent = new Intent(Register.this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
     }
 
     @OnClick(R.id.back)

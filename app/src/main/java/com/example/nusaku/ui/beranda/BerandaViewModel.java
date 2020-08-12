@@ -11,13 +11,12 @@ public class BerandaViewModel extends ViewModel {
     private MutableLiveData<String> mText;
     private FirebaseAuth mAuth;
 
-
     public BerandaViewModel()
     {
         mText = new MutableLiveData<>();
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-        mText.setValue("Hello" + user.getDisplayName());
+        mText.setValue("Hello " + user.getDisplayName() + '!');
     }
 
     public LiveData<String> getText()
