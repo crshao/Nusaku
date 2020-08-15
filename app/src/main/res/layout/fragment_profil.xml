@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/profil_bg">
 
     <TextView
         android:id="@+id/text_profil"
@@ -18,4 +19,132 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/aya"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        />
+
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image"
+        android:font="@font/circular_std_medium"
+        android:textColor="#9C3623"
+        android:layout_centerHorizontal="true"
+        android:text="Bryan Gautama"
+        android:textSize="25dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nama"
+        android:font="@font/circular_std_medium"
+        android:textColor="#9C3623"
+        android:layout_centerHorizontal="true"
+        android:text="moemoekyun@maruyama.com"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:id="@+id/lokasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-2.5dp"
+        android:font="@font/circular_std_medium"
+        android:text="Akihabara, Jepang"
+        android:textColor="#9C3623"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbuttonprofil"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lokasi"
+        android:layout_marginTop="25dp"
+        android:text="Sunting Profil"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#9C3623"
+        android:textSize="15dp"
+        android:textAppearance="TextAppearance "
+        />
+
+    <Button
+        android:id="@+id/pesan"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbuttonprofil"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/edit"
+        android:layout_marginTop="25dp"
+        android:text="Pesan Baru"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#9C3623"
+        android:textSize="15dp"
+        android:textAppearance="TextAppearance "
+        />
+
+    <Button
+        android:id="@+id/gabung"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbuttonprofil"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/pesan"
+        android:layout_marginTop="25dp"
+        android:text="Gabung NUSAKU"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#9C3623"
+        android:textSize="15dp"
+        android:textAppearance="TextAppearance "
+        />
+
+    <Button
+        android:id="@+id/tentang"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/roundedbuttonprofil"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/gabung"
+        android:layout_marginTop="25dp"
+        android:text="Tentang NUSAKU"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#9C3623"
+        android:textSize="15dp"
+        android:textAppearance="TextAppearance "
+        />
+
+    <Button
+        android:id="@+id/keluar"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:background="@drawable/keluarbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tentang"
+        android:layout_marginTop="25dp"
+        android:text="Keluar"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="15dp"
+        android:textAppearance="TextAppearance "
+        />
+
+
+</RelativeLayout>
