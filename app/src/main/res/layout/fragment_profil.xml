@@ -79,8 +79,8 @@
         android:textAllCaps="false"
         android:textColor="#9C3623"
         android:textSize="15dp"
-        android:textAppearance="TextAppearance "
         />
+<!--    android:textAppearance="TextAppearance"-->
 
     <Button
         android:id="@+id/pesan"
@@ -95,7 +95,6 @@
         android:textAllCaps="false"
         android:textColor="#9C3623"
         android:textSize="15dp"
-        android:textAppearance="TextAppearance "
         />
 
     <Button
@@ -111,7 +110,6 @@
         android:textAllCaps="false"
         android:textColor="#9C3623"
         android:textSize="15dp"
-        android:textAppearance="TextAppearance "
         />
 
     <Button
@@ -127,7 +125,6 @@
         android:textAllCaps="false"
         android:textColor="#9C3623"
         android:textSize="15dp"
-        android:textAppearance="TextAppearance "
         />
 
     <Button
@@ -143,7 +140,6 @@
         android:textAllCaps="false"
         android:textColor="#fff"
         android:textSize="15dp"
-        android:textAppearance="TextAppearance "
         />
 
 

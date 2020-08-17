@@ -72,22 +72,43 @@
 <!--            android:layout_centerHorizontal="true"-->
 <!--        app:imageResources="@array/img_id_arr"/>-->
 
+<!--    android:layout_width="212px"-->
+<!--    android:layout_height="60px"-->
     <Button
         android:id="@+id/masuk"
-        android:layout_width="212px"
-        android:layout_height="60px"
+        android:layout_width="250px"
+        android:layout_height="90px"
         android:layout_marginTop="1500px"
+        android:text="Masuk"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#9C3623"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/masukbutton"/>
+        android:background="@drawable/roundedbutton"
+        />
 
     <Button
         android:id="@+id/daftar"
-        android:layout_width="212px"
-        android:layout_height="60px"
-        android:layout_marginTop="1600px"
+        android:layout_width="250px"
+        android:layout_height="90px"
+        android:layout_marginTop="1625px"
+        android:text="Daftar"
+        android:fontFamily="@font/circular_std_medium"
+        android:textAllCaps="false"
+        android:textColor="#9C3623"
         android:layout_centerHorizontal="true"
         android:background="@drawable/daftarbutton"/>
 
+    <Button
+        android:id="@+id/cit"
+        android:layout_width="212px"
+        android:layout_height="60px"
+        android:background="@drawable/roundedbuttonprofil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Sunting Profil"
+
+        />
 </RelativeLayout>
 
 
