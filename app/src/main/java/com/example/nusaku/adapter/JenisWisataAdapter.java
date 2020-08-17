@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.nusaku.R;
+import com.example.nusaku.models.DestinationTypeData;
 import com.example.nusaku.models.JenisWisata;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -19,11 +20,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class JenisWisataAdapter extends RecyclerView.Adapter<JenisWisataAdapter.ViewHolder> {
 
-    private ArrayList<JenisWisata> mJenisWisata;
+    private ArrayList<DestinationTypeData> mDestinationType;
     private Context mContext;
 
-    public JenisWisataAdapter(ArrayList<JenisWisata> mJenisWisata, Context mContext) {
-        this.mJenisWisata = mJenisWisata;
+    public JenisWisataAdapter(ArrayList<DestinationTypeData> mDestinationType, Context mContext) {
+        this.mDestinationType = mDestinationType;
         this.mContext = mContext;
     }
 
@@ -36,13 +37,13 @@ public class JenisWisataAdapter extends RecyclerView.Adapter<JenisWisataAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull JenisWisataAdapter.ViewHolder holder, int position) {
-        holder.judul.setText(mJenisWisata.get(position).getNama());
-        holder.image.setImageResource(mJenisWisata.get(position).getImage());
+        holder.judul.setText(mDestinationType.get(position).getTitle());
+//        holder.image.setImageResource(mDestinationType.get(position).getImage());
     }
 
     @Override
     public int getItemCount() {
-        return mJenisWisata.size();
+        return mDestinationType.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -57,8 +58,9 @@ public class JenisWisataAdapter extends RecyclerView.Adapter<JenisWisataAdapter.
 
             itemView.setOnClickListener(v -> {
                 int position = getAdapterPosition();
-                JenisWisata jenisWisata = mJenisWisata.get(position);
-                Toast.makeText(mContext, "Jenis Wisata: " + jenisWisata.getNama(), Toast.LENGTH_SHORT);
+                DestinationTypeData destinationTypeData = mDestinationType.get(position);
+                Toast.makeText(mContext, "Jenis Wisata: " + destinationTypeData.getTitle()
+                        , Toast.LENGTH_SHORT);
             });
         }
     }
